@@ -121,15 +121,3 @@ const styles = StyleSheet.create({
 });
 
 export default RegisterForm;
-
-{
-  /* <View style={styles.inputField}>
-        <TextInput style={styles.input} placeholder="Логін" onChangeText />
-        <TextInput
-          style={styles.input}
-          placeholder="Адреса електронної пошти"
-        />
-        <TextInput style={styles.input} placeholder="Пароль" />
-      </View>
-     */
-}
