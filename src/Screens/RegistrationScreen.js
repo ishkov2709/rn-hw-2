@@ -1,34 +1,39 @@
 import {
   ImageBackground,
+  Keyboard,
   StatusBar,
   StyleSheet,
   Text,
+  TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import images from '../images/images';
+import images from '../assets/images/images';
 import RegisterForm from '../components/RegisterForm';
 import AddPhoto from '../components/AddPhoto';
 
 const RegistrationScreen = () => {
   return (
-    <View>
-      <ImageBackground
-        source={images.background}
-        resizeMode="cover"
-        style={styles.background}
-      >
-        <View style={styles.box}>
-          <AddPhoto />
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View>
+        <ImageBackground
+          source={images.background}
+          resizeMode="cover"
+          style={styles.background}
+        >
+          <View style={styles.box}>
+            <AddPhoto />
 
-          <Text style={styles.titie}>Реєстрація</Text>
+            <Text style={styles.titie}>Реєстрація</Text>
 
-          <RegisterForm />
+            <RegisterForm />
 
-          <Text style={styles.toLoginBtn}>Вже є акаунт? Увійти</Text>
-        </View>
-      </ImageBackground>
-      <StatusBar theme="auto" />
-    </View>
+            <Text style={styles.toLoginBtn}>Вже є акаунт? Увійти</Text>
+          </View>
+
+          <StatusBar theme="auto" />
+        </ImageBackground>
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 
@@ -39,7 +44,6 @@ const styles = StyleSheet.create({
   },
   box: {
     marginTop: 'auto',
-    height: 549,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     backgroundColor: '#ffffff',
@@ -56,6 +60,7 @@ const styles = StyleSheet.create({
     color: '#1B4371',
     fontSize: 16,
     marginTop: 16,
+    marginBottom: 80,
     textAlign: 'center',
   },
 });

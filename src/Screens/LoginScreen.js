@@ -1,42 +1,46 @@
 import {
-  Button,
   ImageBackground,
+  Keyboard,
   StatusBar,
   StyleSheet,
   Text,
+  TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import images from '../images/images';
+import images from '../assets/images/images';
 import LoginForm from '../components/LoginForm';
 
 const LoginScreen = () => {
   return (
-    <View>
-      <ImageBackground
-        source={images.background}
-        resizeMode="cover"
-        style={{
-          width: '100%',
-          height: '100%',
-        }}
-      >
-        <View style={styles.box}>
-          <Text style={styles.titie}>Увійти</Text>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View>
+        <ImageBackground
+          source={images.background}
+          resizeMode="cover"
+          style={{
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <View style={styles.box}>
+            <Text style={styles.titie}>Увійти</Text>
 
-          <LoginForm />
+            <LoginForm />
 
-          <Text style={styles.toLoginBtn}>Немає акаунту? Зареєструватися</Text>
-        </View>
-      </ImageBackground>
-      <StatusBar theme="auto" />
-    </View>
+            <Text style={styles.toRegisterBtn}>
+              Немає акаунту? Зареєструватися
+            </Text>
+          </View>
+        </ImageBackground>
+        <StatusBar theme="auto" />
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 
 const styles = StyleSheet.create({
   box: {
     marginTop: 'auto',
-    height: 489,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     backgroundColor: '#ffffff',
@@ -66,11 +70,12 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginBottom: 32,
   },
-  toLoginBtn: {
+  toRegisterBtn: {
     color: '#1B4371',
     fontSize: 16,
     marginTop: 16,
     textAlign: 'center',
+    marginBottom: 145,
   },
 });
 
